@@ -1,0 +1,24 @@
+# Model endpoint base url
+model_endpoint_base: http://127.0.0.1:8000
+# Model name used to extract tokenizer from configuration file
+model_name: gpt-j-6b
+# Path to the dataset
+dataset: ./ShareGPT_V3_unfiltered_cleaned_split.json
+# Number of prompts to process
+num_prompts: 5
+# Number of requests per second. If this is inf, then all the requests are sent at time 0.
+# Otherwise, we use Poisson process to synthesize the request arrival times
+request_rate: .inf
+# Random seed
+seed: 0
+# Trust remote code from huggingface
+trust_remote_code: false
+# The maximum numbers of tokens to generate. dataset sample output length is used when not specified
+max_new_tokens: '10'
+# The value used to modulate the next token probabilities
+temperature: null
+# If set to float < 1, only the smallest set of most probable tokens
+# with probabilities that add up to `Top p` or higher are kept for generation
+top_p: null
+# The number of highest probability vocabulary tokens to keep for top-k-filtering.
+top_k: null
