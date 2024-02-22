@@ -75,8 +75,9 @@ outputs = requests.post(
     json=sample_input,
     stream=args.streaming_response,
 )
+
+outputs.raise_for_status()
 if args.streaming_response:
-    outputs.raise_for_status()
     for output in outputs.iter_content(chunk_size=None, decode_unicode=True):
         print(output, end="", flush=True)
     print()

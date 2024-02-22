@@ -63,8 +63,9 @@ curl $ENDPOINT_URL/chat/completions \
 python examples/inference/api_server_openai/query_http_requests.py
 
 # using OpenAI SDK
+# please install openai in current env by running: pip install openai>=1.0
 export OPENAI_API_BASE=http://localhost:8000/v1
-export OPENAI_API_KEY=$your_openai_api_key
+export OPENAI_API_KEY="not_a_real_key"
 python examples/inference/api_server_openai/query_openai_sdk.py
 ```
 ### Serving Model to a Simple Endpoint
@@ -74,6 +75,6 @@ python inference/serve.py --config_file <path to the conf file> --simple
 ```
 After deploying the model endpoint, you can access and test it by using the script below:
 ```bash
-python inference/query_single.py --model_endpoint <the model endpoint URL>
+python examples/inference/api_server_simple/query_single.py --model_endpoint <the model endpoint URL>
 ```
 
